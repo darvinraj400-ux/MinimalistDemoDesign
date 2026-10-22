@@ -1,5 +1,6 @@
 import PageTransition from "../components/PageTransition";
 import { Reveal, Stagger, StaggerItem } from "../components/Reveal";
+import ArchImage from "../components/ArchImage";
 import { IMG } from "../data/projects";
 
 const team = [
@@ -91,11 +92,10 @@ export default function Studio() {
           <section className="py-8 md:py-12">
             <Reveal>
               <div className="aspect-architectural md:aspect-[2.4/1] overflow-hidden bg-[var(--color-subtle)]">
-                <img
+                <ArchImage
                   src={IMG.studio}
                   alt="FORM / FIELD studio interior — work tables and architectural drawings"
-                  className="w-full h-full object-cover"
-                  loading="lazy"
+                  className="w-full h-full"
                 />
               </div>
               <p className="type-meta text-[var(--color-muted)] mt-3">

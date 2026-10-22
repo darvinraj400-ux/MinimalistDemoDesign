@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import PageTransition from "../components/PageTransition";
 import { Reveal } from "../components/Reveal";
+import ArchImage from "../components/ArchImage";
 import { IMG } from "../data/projects";
 
 export default function Home() {
@@ -46,12 +47,11 @@ export default function Home() {
               className="relative"
             >
               <div className="aspect-architectural md:aspect-[2.4/1] overflow-hidden bg-[var(--color-subtle)] relative">
-                <img
+                <ArchImage
                   src={IMG.hero}
                   alt="Architectural composition — concrete form against sky"
-                  className="w-full h-full object-cover"
-                  loading="eager"
-                  onLoad={(e) => e.currentTarget.classList.add("loaded")}
+                  className="w-full h-full"
+                  lazy={false}
                 />
                 {/* Subtle grid overlay */}
                 <div className="absolute inset-0 pointer-events-none opacity-[0.06]"
@@ -97,11 +97,10 @@ export default function Home() {
               <Reveal className="md:col-span-7">
                 <Link to="/projects/house-of-light" className="group block">
                   <div className="aspect-architectural overflow-hidden bg-[var(--color-subtle)] mb-4">
-                    <img
-                      src="/images/project-1-hero.jpg"
+                    <ArchImage
+                      src={IMG.p1}
                       alt="House of Light"
-                      className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.02]"
-                      loading="lazy"
+                      className="w-full h-full transition-transform duration-700 ease-out group-hover:scale-[1.02]"
                     />
                   </div>
                   <div className="flex justify-between items-baseline">
@@ -118,11 +117,10 @@ export default function Home() {
               <Reveal delay={0.15} className="md:col-span-5">
                 <Link to="/projects/grain-silo-conversion" className="group block">
                   <div className="aspect-portrait overflow-hidden bg-[var(--color-subtle)] mb-4">
-                    <img
-                      src="/images/project-2-hero.jpg"
+                    <ArchImage
+                      src={IMG.p2}
                       alt="Grain Silo Conversion"
-                      className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.02]"
-                      loading="lazy"
+                      className="w-full h-full transition-transform duration-700 ease-out group-hover:scale-[1.02]"
                     />
                   </div>
                   <div className="flex justify-between items-baseline">
@@ -139,11 +137,10 @@ export default function Home() {
               <Reveal className="md:col-span-5 md:col-start-2">
                 <Link to="/projects/field-house" className="group block">
                   <div className="aspect-architectural overflow-hidden bg-[var(--color-subtle)] mb-4">
-                    <img
-                      src="/images/project-3-hero.jpg"
+                    <ArchImage
+                      src={IMG.p3}
                       alt="Field House"
-                      className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.02]"
-                      loading="lazy"
+                      className="w-full h-full transition-transform duration-700 ease-out group-hover:scale-[1.02]"
                     />
                   </div>
                   <div className="flex justify-between items-baseline">
@@ -160,11 +157,10 @@ export default function Home() {
               <Reveal delay={0.1} className="md:col-span-5 md:col-start-8">
                 <Link to="/projects/warehouse-no-7" className="group block">
                   <div className="aspect-architectural overflow-hidden bg-[var(--color-subtle)] mb-4">
-                    <img
-                      src="/images/project-4-hero.jpg"
+                    <ArchImage
+                      src={IMG.p4}
                       alt="Warehouse No. 7"
-                      className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.02]"
-                      loading="lazy"
+                      className="w-full h-full transition-transform duration-700 ease-out group-hover:scale-[1.02]"
                     />
                   </div>
                   <div className="flex justify-between items-baseline">

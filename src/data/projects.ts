@@ -23,14 +23,14 @@ export interface Project {
 
 // Image URLs from generation
 const IMG = {
-  hero: "https://image.qwenlm.ai/generated-images/1aaa49c8-53a9-4588-b365-6f8b1589598f/_result.png",
-  p1: "https://image.qwenlm.ai/generated-images/903382a3-3a2f-4e7a-8317-fd2c5cf27ed4/_result.png",
-  p2: "https://image.qwenlm.ai/generated-images/fed658fa-cde5-4625-be92-be3d7cc4a1e1/_result.png",
-  p3: "https://image.qwenlm.ai/generated-images/68cd29c4-ee6d-4e33-af2c-89b98fc14412/_result.png",
-  p4: "https://image.qwenlm.ai/generated-images/3bb25f20-c98b-4405-90bd-71ae3e26a2f8/_result.png",
-  p5: "https://image.qwenlm.ai/generated-images/421c93fd-f4b5-4b66-818e-7ec24b3338a3/_result.png",
-  p6: "https://image.qwenlm.ai/generated-images/58a3daca-1953-45e7-ba50-58ae8aa5f773/_result.png",
-  studio: "https://image.qwenlm.ai/generated-images/54849594-cc66-476f-8758-747856d0dd08/_result.png",
+  hero: "https://image.qwenlm.ai/generated-images/cf64aebe-6f22-4829-8051-1b09adf73523/_result.png",
+  p1: "https://image.qwenlm.ai/generated-images/c22ef9fa-0b30-453a-9a49-63b7ae2cbf7e/_result.png",
+  p2: "https://image.qwenlm.ai/generated-images/0719dfbe-4ea2-4645-8c55-2ea0f20ff1f0/_result.png",
+  p3: "https://image.qwenlm.ai/generated-images/d8aacec9-23a9-4e33-8e02-8816da5b89a9/_result.png",
+  p4: "https://image.qwenlm.ai/generated-images/4295171e-7476-40d6-8b35-b33e789d189a/_result.png",
+  p5: "https://image.qwenlm.ai/generated-images/96d41a04-a89f-4d0c-80ef-28131660ebbb/_result.png",
+  p6: "https://image.qwenlm.ai/generated-images/29e08ecc-e8ef-4852-b3b2-9260d7580d43/_result.png",
+  studio: "https://image.qwenlm.ai/generated-images/9a4a4e03-13d5-4aa6-9ae3-4c75fd9c9dbb/_result.png",
 };
 
 export { IMG };

@@ -1,5 +1,6 @@
 import { useEffect, useCallback, useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import ArchImage from "./ArchImage";
 import type { ProjectImage } from "../data/projects";
 
 interface ImageViewerProps {
@@ -137,15 +138,18 @@ export default function ImageViewer({ images, initialIndex, isOpen, onClose }: I
             transition={{ type: "tween", duration: 0.35, ease: [0.25, 0.1, 0.25, 1] }}
             className="absolute inset-0 flex items-center justify-center p-5 md:p-12"
           >
-            <img
-              src={currentImage.src}
-              alt={currentImage.alt}
-              className={`max-w-full max-h-full object-contain ${
-                currentImage.src.startsWith("data:image/svg") ? "bg-[var(--color-subtle)] p-4 md:p-8" : ""
-              }`}
-              draggable={false}
-              onLoad={(e) => e.currentTarget.classList.add("loaded")}
-            />
+            <div className={`max-w-full max-h-full ${
+              currentImage.src.startsWith("image/svg") || currentImage.src.startsWith("data:image/svg")
+                ? "bg-[var(--color-subtle)] p-4 md:p-8"
+                : ""
+            }`}>
+              <ArchImage
+                src={currentImage.src}
+                alt={currentImage.alt}
+                className="max-w-full max-h-full object-contain"
+                lazy={false}
+              />
+            </div>
           </motion.div>
         </AnimatePresence>
 
@@ -185,7 +189,7 @@ export default function ImageViewer({ images, initialIndex, isOpen, onClose }: I
               }`}
               aria-label={`View image ${i + 1}`}
             >
-              <img src={img.src} alt="" className="w-full h-full object-cover" />
+              <ArchImage src={img.src} alt="" className="w-full h-full object-cover" />
             </button>
           ))}
         </div>

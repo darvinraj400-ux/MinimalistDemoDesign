@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import PageTransition from "../components/PageTransition";
 import { Reveal, Stagger, StaggerItem } from "../components/Reveal";
+import ArchImage from "../components/ArchImage";
 import { projects, projectTypes, projectYears } from "../data/projects";
 
 export default function Projects() {
@@ -143,11 +144,10 @@ export default function Projects() {
                             <div className={`${
                               i % 2 === 0 ? "aspect-architectural" : "aspect-portrait"
                             } overflow-hidden bg-[var(--color-subtle)] mb-4`}>
-                              <img
+                              <ArchImage
                                 src={project.heroImage.src}
                                 alt={project.heroImage.alt}
-                                className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.02]"
-                                loading="lazy"
+                                className="w-full h-full transition-transform duration-700 ease-out group-hover:scale-[1.02]"
                               />
                             </div>
                             <div className="flex justify-between items-baseline gap-4">

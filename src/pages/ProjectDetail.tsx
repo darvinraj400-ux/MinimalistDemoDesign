@@ -3,6 +3,7 @@ import { useParams, Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import PageTransition from "../components/PageTransition";
 import { Reveal } from "../components/Reveal";
+import ArchImage from "../components/ArchImage";
 import ImageViewer from "../components/ImageViewer";
 import { projects } from "../data/projects";
 
@@ -62,10 +63,11 @@ export default function ProjectDetail() {
                 aria-label="Open image viewer"
               >
                 <div className="aspect-architectural md:aspect-[2.4/1] overflow-hidden bg-[var(--color-subtle)]">
-                  <img
+                  <ArchImage
                     src={project.heroImage.src}
                     alt={project.heroImage.alt}
-                    className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.01]"
+                    className="w-full h-full transition-transform duration-700 ease-out group-hover:scale-[1.01]"
+                    lazy={false}
                   />
                 </div>
               </button>
@@ -200,7 +202,7 @@ export default function ProjectDetail() {
             </Reveal>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
               {project.images.map((img, i) => {
-                const isDrawing = img.src.startsWith("data:image/svg");
+                const isDrawing = img.src.startsWith("image/svg") || img.src.startsWith("data:image/svg");
                 return (
                   <Reveal key={i} delay={i * 0.1}>
                     <button
@@ -209,14 +211,12 @@ export default function ProjectDetail() {
                       aria-label={`View: ${img.caption || img.alt}`}
                     >
                       <div className={`aspect-architectural overflow-hidden bg-[var(--color-subtle)] ${isDrawing ? "p-4" : ""}`}>
-                        <img
+                        <ArchImage
                           src={img.src}
                           alt={img.alt}
                           className={`w-full h-full transition-transform duration-700 ease-out group-hover:scale-[1.02] ${
                             isDrawing ? "object-contain" : "object-cover"
                           }`}
-                          loading="lazy"
-                          onLoad={(e) => e.currentTarget.classList.add("loaded")}
                         />
                       </div>
                       {img.caption && (
